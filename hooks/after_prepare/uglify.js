@@ -133,7 +133,7 @@ function compress(file) {
 
             source = fs.readFileSync(file, 'utf8');
             result = cssMinifier.minify(source);
-            fs.writeFileSync(file, result, 'utf8'); // overwrite the original unminified file
+            fs.writeFileSync(file, result.styles, 'utf8'); // overwrite the original unminified file
             break;
 
         default:
